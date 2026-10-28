@@ -1,28 +1,23 @@
 import { test as base } from '@playwright/test'
-import { WikipediaNavigationActions } from '../actions/WikipediaNavigationActions'
-import { WikipediaSearchActions } from '../actions/WikipediaSearchActions'
-import { WikipediaArticleLocators } from '../locators/WikipediaArticleLocators'
-import { WikipediaHomeLocators } from '../locators/WikipediaHomeLocators'
+import { WikipediaNavegacaoActions } from '../actions/WikipediaNavegacaoActions'
+import { WikipediaPesquisaActions } from '../actions/WikipediaPesquisaActions'
+import { WikipediaLocators } from '../locators/WikipediaLocators'
 
 type WikipediaFixtures = {
-  article: WikipediaArticleLocators
-  home: WikipediaHomeLocators
-  navigation: WikipediaNavigationActions
-  search: WikipediaSearchActions
+  locators: WikipediaLocators
+  navegacao: WikipediaNavegacaoActions
+  pesquisa: WikipediaPesquisaActions
 }
 
 export const test = base.extend<WikipediaFixtures>({
-  article: async ({ page }, use) => {
-    await use(new WikipediaArticleLocators(page))
+  locators: async ({ page }, use) => {
+    await use(new WikipediaLocators(page))
   },
-  home: async ({ page }, use) => {
-    await use(new WikipediaHomeLocators(page))
+  navegacao: async ({ page }, use) => {
+    await use(new WikipediaNavegacaoActions(page))
   },
-  navigation: async ({ page }, use) => {
-    await use(new WikipediaNavigationActions(page))
-  },
-  search: async ({ page }, use) => {
-    await use(new WikipediaSearchActions(page))
+  pesquisa: async ({ page }, use) => {
+    await use(new WikipediaPesquisaActions(page))
   },
 })
 
