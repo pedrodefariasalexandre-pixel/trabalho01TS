@@ -4,6 +4,6 @@ export class WikipediaArticleLocators {
   readonly title: Locator
 
   constructor(page: Page) {
-    this.title = page.locator('#firstHeading')
+    this.title = page.getByRole('heading', { level: 1 })
   }
 }

@@ -10,7 +10,9 @@ test.describe('Wikipédia - pesquisa', () => {
     await navigation.openHome()
     await search.searchFor('Brasil')
 
-    await expect(page).toHaveURL(/\/wiki\/Brasil(?:$|[?#])/)
+    await expect(page).toHaveURL(
+      /^https:\/\/pt\.wikipedia\.org\/wiki\/Brasil(?:$|[?#])/,
+    )
     await expect(article.title).toBeVisible()
     await expect(article.title).toHaveText('Brasil')
   })
