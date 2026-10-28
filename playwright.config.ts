@@ -14,14 +14,8 @@ export default defineConfig({
   use: {
     baseURL: 'https://pt.wikipedia.org',
     locale: 'pt-BR',
-    proxy: process.env.HTTPS_PROXY
-      ? { server: process.env.HTTPS_PROXY }
-      : undefined,
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
-    launchOptions: {
-      executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH,
-    },
   },
   projects: [
     {
