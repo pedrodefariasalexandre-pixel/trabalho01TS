@@ -37,4 +37,10 @@ npm test
 - `tests/`: cenários e validações.
 - `utils/`: constantes e utilitários reutilizáveis.
 
+## Convenções
+
+- Identificadores do código são escritos em inglês.
+- Descrições dos testes, documentação e mensagens de commit são escritas em português.
+- A indentação usa 2 espaços em todos os arquivos TypeScript.
+
 O autocomplete não faz parte do caminho obrigatório porque as sugestões da Wikipédia podem sofrer limitação de requisições. O fluxo principal de pesquisa será feito com `Enter` e validará o resultado carregado.
