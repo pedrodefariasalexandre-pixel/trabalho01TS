@@ -6,6 +6,7 @@ Projeto acadêmico de automação da Wikipédia em português usando Playwright 
 
 - Abrir a página inicial da Wikipédia em português.
 - Validar que o campo principal de pesquisa está visível e habilitado.
+- Pesquisar um artigo com `Enter` e validar a URL e o título carregado.
 - Usar somente leitura, pesquisa e navegação, sem login ou edição de conteúdo.
 
 ## Requisitos
