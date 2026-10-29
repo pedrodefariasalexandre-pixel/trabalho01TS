@@ -16,4 +16,15 @@ export class WikipediaPesquisaActions {
   async abrirPrimeiroResultado() {
     await this.locators.primeiroResultado.click()
   }
+
+  async abrirPesquisaAvancada() {
+    await this.locators.abaPesquisaAvancada.click()
+  }
+
+  async filtrarPorWikipediaEAjuda() {
+    await this.locators.filtroArtigos.uncheck()
+    await this.locators.filtroWikipedia.check()
+    await this.locators.filtroAjuda.check()
+    await this.locators.botaoPesquisarResultados.click()
+  }
 }
