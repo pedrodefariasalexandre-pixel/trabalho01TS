@@ -12,4 +12,8 @@ export class WikipediaPesquisaActions {
     await this.locators.campoPesquisa.fill(termo)
     await this.locators.campoPesquisa.press('Enter')
   }
+
+  async abrirPrimeiroResultado() {
+    await this.locators.primeiroResultado.click()
+  }
 }

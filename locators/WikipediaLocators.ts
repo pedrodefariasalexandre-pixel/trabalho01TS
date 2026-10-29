@@ -5,8 +5,10 @@ export class WikipediaLocators {
   readonly campoPesquisa: Locator
   readonly conteudoDestacado: Locator
   readonly eventosAtuais: Locator
+  readonly listaResultados: Locator
   readonly paginaInicial: Locator
   readonly portais: Locator
+  readonly primeiroResultado: Locator
   readonly tituloArtigo: Locator
 
   constructor(page: Page) {
@@ -18,12 +20,14 @@ export class WikipediaLocators {
     this.eventosAtuais = page
       .locator('#p-navigation')
       .getByRole('link', { name: 'Eventos atuais', exact: true })
+    this.listaResultados = page.locator('.mw-search-results')
     this.paginaInicial = page
       .locator('#p-navigation')
       .getByRole('link', { name: 'Página principal', exact: true })
     this.portais = page
       .locator('#p-navigation')
       .getByRole('link', { name: 'Portais', exact: true })
+    this.primeiroResultado = page.locator('.mw-search-result-heading a').first()
     this.tituloArtigo = page.getByRole('heading', { level: 1 })
   }
 }
