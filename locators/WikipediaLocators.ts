@@ -6,6 +6,7 @@ export class WikipediaLocators {
   readonly conteudoDestacado: Locator
   readonly eventosAtuais: Locator
   readonly listaResultados: Locator
+  readonly mensagemSemResultados: Locator
   readonly paginaInicial: Locator
   readonly portais: Locator
   readonly primeiroResultado: Locator
@@ -21,6 +22,7 @@ export class WikipediaLocators {
       .locator('#p-navigation')
       .getByRole('link', { name: 'Eventos atuais', exact: true })
     this.listaResultados = page.locator('.mw-search-results')
+    this.mensagemSemResultados = page.locator('.mw-search-nonefound')
     this.paginaInicial = page
       .locator('#p-navigation')
       .getByRole('link', { name: 'Página principal', exact: true })
